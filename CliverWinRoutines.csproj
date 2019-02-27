@@ -235,7 +235,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CliverRoutines\CliverRoutines.csproj">
+    <ProjectReference Include="..\CliverRoutines\CliverRoutines.csproj">
       <Project>{e88444ba-1b07-40e6-96d1-922d27965f91}</Project>
       <Name>CliverRoutines</Name>
     </ProjectReference>
