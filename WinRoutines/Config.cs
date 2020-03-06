@@ -8,6 +8,7 @@
 //********************************************************************************************
 using System.IO;
 using System.Security.AccessControl;
+using System.Security.Principal;
 
 namespace Cliver.Win
 {
@@ -19,12 +20,23 @@ namespace Cliver.Win
         /// <param name="userIdentityName"></param>
         public static void AllowReadWriteConfig(string userIdentityName = null)
         {
-            if (userIdentityName == null)
-                userIdentityName = UserRoutines.GetCurrentUserName3();
+            allowReadWriteConfig(new SecurityIdentifier(userIdentityName));
+        }
+
+        /// <summary>
+        /// By defult Environment.SpecialFolder.CommonApplicationData does not have writting permission
+        /// </summary>
+        public static void AllowReadWriteConfigToEveryone()
+        {
+            allowReadWriteConfig(new SecurityIdentifier(WellKnownSidType.WorldSid, null));
+        }
+
+        static void allowReadWriteConfig(SecurityIdentifier securityIdentifier)
+        {
             DirectoryInfo di = new DirectoryInfo(Cliver.AppSettings.StorageDir);
             DirectorySecurity ds = di.GetAccessControl();
             ds.AddAccessRule(new FileSystemAccessRule(
-                userIdentityName,
+                    securityIdentifier,
                 FileSystemRights.Modify,
                 InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit,
                 PropagationFlags.None,
