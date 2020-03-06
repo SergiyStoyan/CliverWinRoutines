@@ -20,7 +20,10 @@ namespace Cliver.Win
         /// <param name="userIdentityName"></param>
         public static void AllowReadWriteConfig(string userIdentityName = null)
         {
-            allowReadWriteConfig(new SecurityIdentifier(userIdentityName));
+            if (userIdentityName == null)
+                userIdentityName = UserRoutines.GetCurrentUserName3();
+            NTAccount a = new NTAccount(userIdentityName);
+            allowReadWriteConfig((SecurityIdentifier)a.Translate(typeof(SecurityIdentifier)));
         }
 
         /// <summary>
