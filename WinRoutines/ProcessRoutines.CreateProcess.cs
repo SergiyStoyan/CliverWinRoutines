@@ -16,8 +16,6 @@ namespace Cliver.Win
     {
         public static uint CreateProcessAsUserOfCurrentProcess(uint dwSessionId, String commandLine, WinApi.Advapi32.CreationFlags dwCreationFlags = 0, WinApi.Advapi32.STARTUPINFO? startupInfo = null)
         {
-            Log.Main.Inform("Launching (in session " + dwSessionId + "):\r\n" + commandLine);
-
             IntPtr hNewProcessToken = IntPtr.Zero;
             IntPtr hProcessToken = IntPtr.Zero;
             try
