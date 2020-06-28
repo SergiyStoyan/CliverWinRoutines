@@ -152,6 +152,7 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="WinApi\WinApi.cs" />
     <Compile Include="WinRoutines\Crypto.cs" />
     <Compile Include="WinRoutines\ProgramRoutines.cs" />
     <Compile Include="WinRoutines\ImageRoutines.cs" />
