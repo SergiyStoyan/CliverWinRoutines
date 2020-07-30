@@ -152,8 +152,16 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Microsoft\Win32\NativeMethods.cs" />
+    <Compile Include="Microsoft\Win32\SafeFileMappingHandle.cs" />
+    <Compile Include="WinApi\Handles.cs" />
+    <Compile Include="Microsoft\Win32\SafeLocalMemHandle.cs" />
+    <Compile Include="Microsoft\Win32\SafeNativeMethods.cs" />
+    <Compile Include="Microsoft\Win32\SafeThreadHandle.cs" />
+    <Compile Include="Microsoft\Win32\UnsafeNativeMethods.cs" />
     <Compile Include="WinApi\WinApi.cs" />
     <Compile Include="WinRoutines\Crypto.cs" />
+    <Compile Include="WinRoutines\ProcessRoutines2.CreateProcess.cs" />
     <Compile Include="WinRoutines\ProgramRoutines.cs" />
     <Compile Include="WinRoutines\ImageRoutines.cs" />
     <Compile Include="BaseForm\Message.cs" />
@@ -169,6 +177,7 @@
     <Compile Include="Db\DbConnection.cs" />
     <Compile Include="InternetDateTime.cs" />
     <Compile Include="WinRoutines\AssemblyRoutines.cs" />
+    <Compile Include="WinRoutines\SessionRoutines.cs" />
     <Compile Include="WinRoutines\ThreadRoutines.cs" />
     <Compile Include="WinRoutines\ProcessRoutines.GetLockingProcesses.cs" />
     <Compile Include="WinRoutines\Firewall.cs" />
