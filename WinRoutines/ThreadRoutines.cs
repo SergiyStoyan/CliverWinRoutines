@@ -28,7 +28,7 @@ namespace Cliver.Win
 
         public delegate void ErrorHandler(Exception e);
 
-        public static Thread StartTry(MethodInvoker code, ErrorHandler on_error = null, MethodInvoker on_finally = null, bool background = true, ApartmentState state = ApartmentState.Unknown)
+        public static Thread StartTry(MethodInvoker code, ErrorHandler onError = null, MethodInvoker finallyCode = null, bool background = true, ApartmentState state = ApartmentState.Unknown)
         {
             Thread t = new Thread(
                 () =>
@@ -45,9 +45,9 @@ namespace Cliver.Win
                     {
                         try
                         {
-                            if (on_error == null)
+                            if (onError == null)
                                 throw e;
-                            on_error.Invoke(e);
+                            onError.Invoke(e);
                         }
                         catch (ThreadAbortException)
                         {
@@ -56,7 +56,7 @@ namespace Cliver.Win
                     }
                     finally
                     {
-                        on_finally?.Invoke();
+                        finallyCode?.Invoke();
                     }
                 }
             );
