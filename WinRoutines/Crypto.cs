@@ -41,14 +41,23 @@ namespace Cliver.Win
             /// </summary>
             public ProtectedData()
             {
+                key = Encoding.UTF8.GetBytes(getKeyFromComputer());
+            }
+            string getKeyFromComputer()
+            {
                 string key = SystemInfo.GetMotherboardIds().FirstOrDefault();
-                if (key == null)
-                {
-                    var pi = SystemInfo.GetProcessorInfos().FirstOrDefault();
-                    key = pi != null ? pi.Id : throw new Exception("Could not create the default key");
-                }
-
-                this.key = Encoding.UTF8.GetBytes(key);
+                if (key != null)
+                    return key;
+                var pi = SystemInfo.GetProcessorInfos().FirstOrDefault();
+                if (pi != null)
+                    return pi.Id;
+                key = SystemInfo.GetMachineGuid();
+                if (key != null)
+                    return key;
+                key = SystemInfo.GetMACs().FirstOrDefault();
+                if (key != null)
+                    return key;
+                throw new Exception("Could not create the default key");
             }
 
             public string Encrypt(string str)

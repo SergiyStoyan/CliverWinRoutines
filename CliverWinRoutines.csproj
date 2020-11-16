@@ -175,6 +175,7 @@
     <Compile Include="InternetDateTime.cs" />
     <Compile Include="WinRoutines\AssemblyRoutines.cs" />
     <Compile Include="WinRoutines\SessionRoutines.cs" />
+    <Compile Include="WinRoutines\Wmi.cs" />
     <Compile Include="WinRoutines\ThreadRoutines.cs" />
     <Compile Include="WinRoutines\ProcessRoutines.GetLockingProcesses.cs" />
     <Compile Include="WinRoutines\Firewall.cs" />
