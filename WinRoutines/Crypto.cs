@@ -41,23 +41,7 @@ namespace Cliver.Win
             /// </summary>
             public ProtectedData()
             {
-                key = Encoding.UTF8.GetBytes(getKeyFromComputer());
-            }
-            string getKeyFromComputer()
-            {
-                string key = SystemInfo.GetMotherboardIds().FirstOrDefault();
-                if (key != null)
-                    return key;
-                var pi = SystemInfo.GetProcessorInfos().FirstOrDefault();
-                if (pi != null)
-                    return pi.Id;
-                key = SystemInfo.GetMachineGuid();
-                if (key != null)
-                    return key;
-                key = SystemInfo.GetMACs().FirstOrDefault();
-                if (key != null)
-                    return key;
-                throw new Exception("Could not create the default key");
+                key = Encoding.UTF8.GetBytes(GetKeyFromComputerSystemInfo());
             }
 
             public string Encrypt(string str)
@@ -77,6 +61,23 @@ namespace Cliver.Win
                 byte[] decrypted = System.Security.Cryptography.ProtectedData.Unprotect(data, key, DataProtectionScope);
                 return Encoding.Unicode.GetString(decrypted);
             }
+        }
+
+        public static string GetKeyFromComputerSystemInfo()
+        {
+            string key = SystemInfo.GetMotherboardIds().FirstOrDefault();
+            if (key != null)
+                return key;
+            var pi = SystemInfo.GetProcessorInfos().FirstOrDefault();
+            if (pi != null)
+                return pi.Id;
+            key = SystemInfo.GetMachineGuid();
+            if (key != null)
+                return key;
+            key = SystemInfo.GetMACs().FirstOrDefault();
+            if (key != null)
+                return key;
+            throw new Exception("Could not create the default key");
         }
     }
 }
