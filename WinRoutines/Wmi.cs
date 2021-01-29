@@ -28,6 +28,8 @@ namespace Cliver.Win
         static public Tuple<string, string> Win32_BIOS_SerialNumber = new Tuple<string, string>("Win32_BIOS", "SerialNumber");
         static public Tuple<string, string> Win32_BIOS_ReleaseDate = new Tuple<string, string>("Win32_BIOS", "ReleaseDate");
         static public Tuple<string, string> Win32_BIOS_Version = new Tuple<string, string>("Win32_BIOS", "Version");
+        static public Tuple<string, string> Win32_OperatingSystem_SerialNumber = new Tuple<string, string>("Win32_OperatingSystem", "SerialNumber");
+        static public Tuple<string, string> Win32_OperatingSystem_PlusProductID = new Tuple<string, string>("Win32_OperatingSystem", "PlusProductID");
 
         public static IEnumerable<string> GetProperty(Tuple<string, string> wmiRequest)
         {
@@ -39,8 +41,9 @@ namespace Cliver.Win
             ManagementClass mc = new ManagementClass(wmiClass);
             foreach (ManagementObject mo in mc.GetInstances())
             {
-                if (mo[wmiProperty] != null)
-                    yield return mo[wmiProperty]?.ToString().Trim();
+                var v = mo[wmiProperty];
+                if(v != null)
+                    yield return v.ToString().Trim();
             }
         }
     }
