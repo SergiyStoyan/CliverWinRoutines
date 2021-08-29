@@ -8,6 +8,8 @@
 		<AssemblyName>CliverWinRoutines</AssemblyName>
 		<Deterministic>false</Deterministic>
 		<UseWPF>true</UseWPF>
+		<RepositoryUrl>https://github.com/sergeystoyan/CliverWinRoutines</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/sergeystoyan/CliverWinRoutines</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -44,7 +46,6 @@
 		<Compile Update="WinRoutines\ConsoleRoutines.cs" />
 		<Compile Update="WinRoutines\Crypto.cs" />
 		<Compile Update="WinRoutines\ProcessRoutines2.CreateProcess.cs" />
-		<Compile Update="WinRoutines\ProgramRoutines.cs" />
 		<Compile Update="WinRoutines\ImageRoutines.cs" />
 		<Compile Update="BaseForm\Message.cs" />
 		<Compile Update="BaseForm\MessageForm.cs">
