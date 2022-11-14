@@ -1,8 +1,6 @@
 //********************************************************************************************
 //Author: Sergiy Stoyan
-//        systoyan@gmail.com
-//        sergiy.stoyan@outlook.com
-//        stoyan@cliversoft.com
+//        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
 //        http://www.cliversoft.com
 //********************************************************************************************
 
@@ -19,28 +17,14 @@ namespace Cliver.Win
     {
         static Encrypted()
         {
-            InitializeDefault(new StringEndec());
+            InitializeDefault(new StringEndec.ProtectedData());
         }
 
-        public Encrypted(T value = null) : base(value) { }
-    }
+        /// <summary>
+        /// (!)The default constructor is used by the deserializer.
+        /// </summary>
+        public Encrypted() : base() { }
 
-    public class StringEndec : Cliver.StringEndec
-    {
-        public StringEndec()
-        {
-            crypto = new Win.Crypto.ProtectedData();
-        }
-        Win.Crypto.ProtectedData crypto;
-
-        override public string Encrypt(string s)
-        {
-            return crypto.Encrypt(s);
-        }
-
-        override public string Decrypt(string s)
-        {
-            return crypto.Decrypt(s);
-        }
+        public Encrypted(T value) : base(value) { }
     }
 }

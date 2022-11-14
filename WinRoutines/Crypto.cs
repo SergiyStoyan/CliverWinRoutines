@@ -1,8 +1,6 @@
 /********************************************************************************************
         Author: Sergiy Stoyan
-        systoyan@gmail.com
-        sergiy.stoyan@outlook.com
-        stoyan@cliversoft.com
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 
@@ -15,6 +13,9 @@ using System.Linq;
 
 namespace Cliver.Win
 {
+    /// <summary>
+    /// (!)Deprecated. Replaced with Endec class.
+    /// </summary>
     public class Crypto
     {
         public static string GetKeyFromComputerSystemInfo()

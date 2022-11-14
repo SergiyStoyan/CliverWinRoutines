@@ -1,8 +1,6 @@
 /********************************************************************************************
         Author: Sergiy Stoyan
-        systoyan@gmail.com
-        sergiy.stoyan@outlook.com
-        stoyan@cliversoft.com
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 
@@ -69,6 +67,7 @@ namespace Cliver.Win
         /// <param name="year">year when the test period expires; if it is less than 1 then the check is not performed</param>
         /// <param name="month">month when the test period expires</param>
         /// <param name="day">day when the test period expires</param>
+        /// <param name="silently"></param>
         /// <param name="for_release_only"></param>
         static public void CHECK_TEST_PERIOD_VALIDITY(int year, int month, int day, bool silently = false, bool for_release_only = false)
         {
