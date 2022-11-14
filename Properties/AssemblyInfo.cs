@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CliverWinRoutines")]
-[assembly: AssemblyDescription("C# Windows Routines Lib")]
+[assembly: AssemblyDescription("Windows-specific routines which are helpful in a desktop Windows application. Based on .NET Framework 4.8")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CliverSoft")]
 [assembly: AssemblyProduct("C# Windows Routines Lib")]

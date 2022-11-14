@@ -9,9 +9,9 @@
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/SergiyStoyan/CliverWinRoutines</projectUrl>
-    <description>C# routines which are usually needed in a desktop Windows application</description>
+    <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>Windows</tags>
+    <tags>Windows .NET</tags>
   </metadata>
 </package>

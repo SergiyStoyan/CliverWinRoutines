@@ -1,5 +1,5 @@
 # CliverWinRoutines
 
-CliverWinRoutines is a .NET Framework 4.8 lib exposing Windows-specific routines that are helpful in a desktop application.
+Windows-specific routines which are helpful in a desktop Windows application. Based on .NET Framework 4.8
 
 ## [Source code](https://github.com/SergiyStoyan/CliverWinRoutines)
