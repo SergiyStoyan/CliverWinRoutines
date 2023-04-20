@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
+    <readme>README.md</readme>
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
@@ -14,4 +15,7 @@
     <copyright>$copyright$</copyright>
     <tags>Windows .NET</tags>
   </metadata>
+    <files>
+    <file src=".\README.md" target="." />
+    </files>
 </package>

@@ -295,14 +295,8 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CliverRoutines\CliverRoutines.csproj">
-      <Project>{d14d063c-3198-4cfe-8d95-98328918f26f}</Project>
-      <Name>CliverRoutines</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.2-beta3</Version>
+    <PackageReference Include="CliverRoutines">
+      <Version>6.34.2</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
