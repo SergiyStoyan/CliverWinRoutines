@@ -296,7 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CliverRoutines">
-      <Version>6.34.2</Version>
+      <Version>6.43.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

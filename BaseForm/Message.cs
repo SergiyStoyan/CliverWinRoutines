@@ -71,6 +71,32 @@ namespace Cliver
             return n;
         }
 
+        public static void Show(Exception exception, Form owner = null)
+        {
+            if (exception is MessageException me)
+            {
+                switch (me.MessageType)
+                {
+                    case Log.MessageType.TRACE:
+                    case Log.MessageType.DEBUG:
+                    case Log.MessageType.INFORM:
+                        ShowDialog(AppName, getIcon(Icons.Information), Log.GetExceptionMessage(me, me.PrintDetails), new string[1] { "OK" }, 0, owner);
+                        break;
+                    case Log.MessageType.ERROR:
+                    case Log.MessageType.EXIT:
+                        ShowDialog(AppName, getIcon(Icons.Error), /*GetExceptionDetails(e)*/Log.GetExceptionMessage(me, me.PrintDetails), new string[1] { "OK" }, 0, owner);
+                        break;
+                    case Log.MessageType.WARNING:
+                        ShowDialog(AppName, getIcon(Icons.Warning), /*GetExceptionDetails(e)*/Log.GetExceptionMessage(me, me.PrintDetails), new string[1] { "OK" }, 0, owner);
+                        break;
+                    default:
+                        throw new Exception("Unknown option: " + me.MessageType);
+                }
+                return;
+            }
+            Error(exception, owner);
+        }
+
         public static void Inform(string message, Form owner = null)
         {
             ShowDialog(AppName, getIcon(Icons.Information), message, new string[1] { "OK" }, 0, owner);
