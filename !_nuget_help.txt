@@ -1,0 +1,3 @@
+To create a nuget package:
+- build the lib;
+- run in the project directory: > nuget.exe pack;
