@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CliverSoft")]
 [assembly: AssemblyProduct("C# Windows Routines Lib")]
-[assembly: AssemblyCopyright("Copyright © 2006-2023, CliverSoft")]
+[assembly: AssemblyCopyright("Copyright © 2006-2024, CliverSoft")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.7.1.*")]
+[assembly: AssemblyVersion("2.7.2.*")]
 //[assembly: AssemblyFileVersion("1.0.0.0")]
