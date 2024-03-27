@@ -8,6 +8,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Cliver
 {
@@ -86,6 +87,7 @@ namespace Cliver
             this.Close();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int ClickedButton { get; private set; } = -1;
 
         new public int ShowDialog()

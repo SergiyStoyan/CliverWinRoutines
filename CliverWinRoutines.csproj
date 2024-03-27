@@ -1,17 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="16.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{51F2DF13-41F1-4F22-890F-C3B50C813909}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CliverWinRoutines</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -23,19 +15,12 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <ManifestCertificateThumbprint>1C424264B0FBE4581C3F5E9EA46D1D432B064701</ManifestCertificateThumbprint>
     <ManifestKeyFile>CliverBot_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <TargetZone>LocalIntranet</TargetZone>
     <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <SignAssembly>false</SignAssembly>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <PublishUrl>c:/CliverBot/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -50,214 +35,79 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>pdbonly</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
     <FileAlignment>4096</FileAlignment>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
-    <Optimize>true</Optimize>
     <FileAlignment>4096</FileAlignment>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
     <FileAlignment>4096</FileAlignment>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
-    <Optimize>true</Optimize>
     <FileAlignment>4096</FileAlignment>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System">
+    <Reference Update="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Data">
+    <Reference Update="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.DirectoryServices">
-      <Name>System.DirectoryServices</Name>
-    </Reference>
-    <Reference Include="System.DirectoryServices.AccountManagement" />
-    <Reference Include="System.Drawing">
+    <Reference Update="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Management" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
-      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
-    </Reference>
-    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms">
-      <Name>System.Windows.Forms</Name>
-    </Reference>
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml">
+    <Reference Update="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BaseForm\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForm\BaseForm.designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForm\Message.async.cs" />
-    <Compile Include="Config\AppSettings.cs" />
-    <Compile Include="Config\Encrypted.cs" />
-    <Compile Include="Microsoft\Win32\NativeMethods.cs" />
-    <Compile Include="Microsoft\Win32\SafeFileMappingHandle.cs" />
-    <Compile Include="WinApi\Handles.cs" />
-    <Compile Include="Microsoft\Win32\SafeLocalMemHandle.cs" />
-    <Compile Include="Microsoft\Win32\SafeNativeMethods.cs" />
-    <Compile Include="Microsoft\Win32\SafeThreadHandle.cs" />
-    <Compile Include="Microsoft\Win32\UnsafeNativeMethods.cs" />
-    <Compile Include="WinApi\WinApi.cs" />
-    <Compile Include="WinRoutines\PathRoutines.cs" />
-    <Compile Include="WinRoutines\ConsoleRoutines.cs" />
-    <Compile Include="WinRoutines\Endec.cs" />
-    <Compile Include="WinRoutines\Crypto.cs" />
-    <Compile Include="WinRoutines\ProcessRoutines2.CreateProcess.cs" />
-    <Compile Include="WinRoutines\ImageRoutines.cs" />
-    <Compile Include="BaseForm\Message.cs" />
-    <Compile Include="BaseForm\MessageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForm\MessageForm.Designer.cs">
-      <DependentUpon>MessageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseService.cs" />
-    <Compile Include="BaseForm\LogMessage.cs" />
-    <Compile Include="InternetDateTime.cs" />
-    <Compile Include="WinRoutines\AssemblyRoutines.cs" />
-    <Compile Include="WinRoutines\SessionRoutines.cs" />
-    <Compile Include="WinRoutines\Wmi.cs" />
-    <Compile Include="WinRoutines\ThreadRoutines.cs" />
-    <Compile Include="WinRoutines\ProcessRoutines.GetLockingProcesses.cs" />
-    <Compile Include="WinRoutines\Firewall.cs" />
-    <Compile Include="WinRoutines\ProcessRoutines.AntiZombieGuard.cs" />
-    <Compile Include="WinRoutines\ProcessRoutines.CreateProcess.cs" />
-    <Compile Include="WinRoutines\UserRoutines.cs" />
-    <Compile Include="WinRoutines\SystemRoutines.cs" />
-    <Compile Include="WinRoutines\SystemInfo.cs" />
-    <Compile Include="WinRoutines\ProcessRoutines.cs" />
-    <Compile Include="WinRoutines\WindowInterceptor.cs" />
-    <Compile Include="WinRoutines\ExcelRoutines.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinApi\Shell32.cs" />
-    <Compile Include="WinApi\Secur32.cs" />
-    <Compile Include="WinApi\Wininet.cs" />
-    <Compile Include="WinApi\Advapi32.cs" />
-    <Compile Include="WinApi\Userenv.cs" />
-    <Compile Include="WinApi\Wts.cs" />
-    <Compile Include="WinApi\User32.cs" />
-    <Compile Include="WinApi\Messages.cs" />
-    <Compile Include="WinRoutines\ErrorRoutines.cs" />
-    <Compile Include="WinApi\Kernel32.cs" />
-    <Compile Include="WinApi\Win64.cs" />
-    <EmbeddedResource Include="BaseForm\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForm\MessageForm.resx">
-      <DependentUpon>MessageForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -292,18 +142,38 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.manifest" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="CliverRoutines">
       <Version>6.43.0</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.DirectoryServices" Version="9.0.4" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.4" />
+    <PackageReference Include="System.Management" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Remove="Test\Form1.cs" />
+    <Compile Remove="Test\Form1.Designer.cs" />
+    <Compile Remove="Test\obj\Debug\net6.0-windows\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+    <Compile Remove="Test\obj\Debug\net6.0-windows\Test.AssemblyInfo.cs" />
+    <Compile Remove="Test\obj\Debug\net6.0-windows\Test.GlobalUsings.g.cs" />
+    <Compile Remove="Test\Program.cs" />
+    <EmbeddedResource Remove="Test\Form1.resx" />
+  </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PackageReleaseNotes>2.7.1 =&gt; 2.7.2
+- upgraded to .NET9;</PackageReleaseNotes>
+    <Title>Windows-specific routines.</Title>
+    <Version>2.7.2</Version>
+    <Description>Windows-specific routines that are helpful in desktop Windows applications.</Description>
+    <Authors>Sergiy Stoyan</Authors>
+    <Company>CliverSoft</Company>
+    <Copyright>Sergiy Stoyan</Copyright>
+    <PackageProjectUrl>https://github.com/sergiystoyan/CliverWinRoutines</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sergiystoyan/CliverWinRoutines.git</RepositoryUrl>
+    <PackageTags>windows, serialize, settings</PackageTags>
   </PropertyGroup>
 </Project>

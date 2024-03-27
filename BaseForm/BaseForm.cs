@@ -8,7 +8,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-using System.Reflection;
 
 namespace Cliver
 {
@@ -17,7 +16,7 @@ namespace Cliver
         public BaseForm()
         {
             InitializeComponent();
-            this.Icon = Icon.ExtractAssociatedIcon(Assembly.GetEntryAssembly().Location);
+            this.Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
         }
 
         public static Size GetRecommendedWindowSize(double factor = 0.8)
