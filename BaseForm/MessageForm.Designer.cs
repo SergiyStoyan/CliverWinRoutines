@@ -81,7 +81,8 @@ namespace Cliver
             this.message.Size = new System.Drawing.Size(695, 182);
             this.message.TabIndex = 9;
             this.message.Text = "message";
-            this.message.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.Message_ContentsResized);
+            this.message.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.message_ContentsResized);
+            this.message.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.message_LinkClicked);
             // 
             // image_box
             // 

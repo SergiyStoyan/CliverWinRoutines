@@ -19,7 +19,7 @@ namespace Cliver
         public MessageForm(string caption, Icon icon, string message, string[] buttons, int default_button, Form owner, bool button_auto_size = false)
         {
             InitializeComponent();
-            
+
             CreateHandle();
 
             this.Icon = Win.AssemblyRoutines.GetAppIcon();
@@ -94,7 +94,7 @@ namespace Cliver
             return ClickedButton;
         }
 
-        private void Message_ContentsResized(object sender, ContentsResizedEventArgs e)
+        private void message_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
             var rtb = (RichTextBox)sender;
             Size s = this.Size;
@@ -157,6 +157,18 @@ namespace Cliver
                 });
             }
             catch { }//if closed already
+        }
+
+        private void message_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try
+            {
+                ProcessRoutines.Open(e.LinkText);
+            }
+            catch (Exception ex)
+            {
+                Message.Error2(ex);
+            }
         }
     }
 }
