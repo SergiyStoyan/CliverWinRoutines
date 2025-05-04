@@ -164,10 +164,13 @@
     <EmbeddedResource Remove="Test\Form1.resx" />
   </ItemGroup>
   <PropertyGroup>
-    <PackageReleaseNotes>2.7.1 =&gt; 2.7.2
+    <PackageReleaseNotes>2.7 =&gt; 2.8
+- Audio added;
+
+2.7.1 =&gt; 2.7.2
 - upgraded to .NET9;</PackageReleaseNotes>
     <Title>Windows-specific routines.</Title>
-    <Version>2.7.2</Version>
+    <Version>2.8.0</Version>
     <Description>Windows-specific routines that are helpful in desktop Windows applications.</Description>
     <Authors>Sergiy Stoyan</Authors>
     <Company>CliverSoft</Company>

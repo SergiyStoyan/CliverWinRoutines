@@ -16,6 +16,7 @@ namespace Cliver.Win
     /// <summary>
     /// (!)Deprecated. Replaced with Endec class.
     /// </summary>
+    [Obsolete("Deprecated, please use Endec class instead.")]
     public class Crypto
     {
         public static string GetKeyFromComputerSystemInfo()
