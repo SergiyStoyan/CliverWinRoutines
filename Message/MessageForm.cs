@@ -10,29 +10,50 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace Cliver
+namespace Cliver.Win
 {
     /// <summary>
-    /// Dynamic dialog box with many answer cases
+    /// Confgurable dialog box
     /// </summary>
     public partial class MessageForm : Form
     {
-        public MessageForm(string caption, Icon icon, string message, string[] buttons, int default_button, Form owner, bool button_auto_size = false)
+        public MessageForm(Message.Config config)
         {
             InitializeComponent();
 
-            CreateHandle();
+            //Load += delegate!!!closes the form immediately
+            //{
+            set(config);
+            //};
 
-            this.Icon = Win.AssemblyRoutines.GetAppIcon();
-
-            this.MaximizeBox = true;
-
-            Owner = owner;
-
-            if (icon != null)
+            FormClosing += delegate (object sender, FormClosingEventArgs e)
             {
-                int w = icon.Width - image_box.Width;
-                image_box.Image = (Image)icon.ToBitmap();
+            };
+        }
+
+        public MessageForm(string title, Icon icon, string message, string[] buttons, int defaultButton, Form owner, bool buttonAutosize = false)
+            : this(new Message.Config { Title = title, Icon = icon, Message = message, Buttons = buttons, DefaultButton = defaultButton, ButtonAutosize = buttonAutosize })
+        { }
+
+        void set(Message.Config c)
+        {
+            if (!IsHandleCreated)
+                CreateHandle();
+
+            config = c;
+
+            this.Icon = c.FormIcon;
+
+            this.MaximizeBox = c.MaximizeBox;
+
+            Owner = c.Owner?.FindForm();
+
+            this.Text = c.Title;
+
+            if (c.Icon != null)
+            {
+                int w = c.Icon.Width - imageBox.Width;
+                imageBox.Image = (Image)c.Icon.ToBitmap();
                 if (w > 0)
                 {
                     this.Width += w;
@@ -41,24 +62,23 @@ namespace Cliver
                 }
             }
 
-            this.Text = caption;
-            this.message.Text = message;
+            this.message.Text = c.Message;
 
-            if (buttons != null)
+            if (c.Buttons != null)
             {
-                for (int i = buttons.Length - 1; i >= 0; i--)
+                for (int i = c.Buttons.Length - 1; i >= 0; i--)
                 {
                     Button b = new Button();
                     b.Tag = i;
-                    b.Text = buttons[i];
+                    b.Text = c.Buttons[i];
                     b.AutoSize = true;
-                    b.Click += b_Click;
+                    b.Click += button_Click;
                     flowLayoutPanel1.Controls.Add(b);
-                    if (i == default_button)
+                    if (i == c.DefaultButton)
                         b.Select();
                 }
 
-                if (!button_auto_size)
+                if (!c.ButtonAutosize)
                 {
                     Size max_size = new Size(0, 0);
                     foreach (Button b in flowLayoutPanel1.Controls)
@@ -76,23 +96,28 @@ namespace Cliver
                 }
             }
 
+            this.TopMost = c.TopMost;
+
+            this.ShowInTaskbar = c.ShowInTaskbar;
+
             //Size s = this.message.GetPreferredSize(new Size(Screen.PrimaryScreen.WorkingArea.Width * 3 / 4, Screen.PrimaryScreen.WorkingArea.Height * 3 / 4));
             //this.Width = this.Width + s.Width - this.message.Width;
             //this.Height = this.Height + s.Height - this.message.Height;
         }
 
-        private void b_Click(object sender, EventArgs e)
+        Message.Config config;
+
+        private void button_Click(object sender, EventArgs e)
         {
             ClickedButton = (int)((Button)sender).Tag;
             this.Close();
         }
 
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int ClickedButton { get; private set; } = -1;
 
         new public int ShowDialog()
         {
-            System.Windows.Forms.DialogResult r = base.ShowDialog();
+            base.ShowDialog();
             return ClickedButton;
         }
 
@@ -104,7 +129,7 @@ namespace Cliver
                 int h = e.NewRectangle.Height - rtb.Height;
                 if (h > 0)
                 {
-                    int h2 = Screen.PrimaryScreen.WorkingArea.Height * 3 / 4 - this.Height;
+                    int h2 = (int)(Screen.PrimaryScreen.WorkingArea.Height * config.ScreenMaxPart.Height) - this.Height;
                     s.Height += h2 < h ? h2 : h;
                 }
             }
@@ -112,15 +137,16 @@ namespace Cliver
                 int w = e.NewRectangle.Width - rtb.Width;
                 if (w > 0)
                 {
-                    int w2 = Screen.PrimaryScreen.WorkingArea.Width * 3 / 4 - this.Width;
+                    int w2 = (int)(Screen.PrimaryScreen.WorkingArea.Width * config.ScreenMaxPart.Width) - this.Width;
                     s.Width += w2 < w ? w2 : w;
                 }
             }
             {
-                if (s.Height > s.Width)
+                int d = s.Height - s.Width;
+                if (d > 0)
                 {
-                    s.Height -= 100;
-                    s.Width += 100;
+                    s.Height -= d;
+                    s.Width += d;
                 }
             }
             this.Size = s;
@@ -133,23 +159,23 @@ namespace Cliver
                 switch ((Int32)m.WParam)
                 {
                     case 0xF030: // Maximize event - SC_MAXIMIZE from Winuser.h
-                        restored_size = this.Size;
+                        restoredSize = this.Size;
                         break;
                     case 0xF120: // Restore event - SC_RESTORE from Winuser.h
-                        this.Size = restored_size;
+                        this.Size = restoredSize;
                         break;
                 }
             }
             base.WndProc(ref m);
         }
 
-        private Size restored_size;
+        private Size restoredSize;
 
         public new void Close()
         {
             try
             {
-                this.Invoke(() =>
+                ControlRoutines.Invoke(this, () =>
                 {
                     try
                     {
@@ -165,11 +191,11 @@ namespace Cliver
         {
             try
             {
-                ProcessRoutines.Open(e.LinkText);
+                Cliver.ProcessRoutines.Open(e.LinkText);
             }
             catch (Exception ex)
             {
-                Message.Error2(ex);
+                this.Error2(ex);
             }
         }
     }

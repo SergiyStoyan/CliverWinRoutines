@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace Cliver
+namespace Cliver//.Win (!)for backword compatibility and not adding using Cliver.Win;
 {
     public partial class BaseForm : Form
     {
@@ -61,6 +61,14 @@ namespace Cliver
         //    return c.Invoke(code);
         //}
 
+        public static object Invoke(this Control c, Delegate function, params object[] args)
+        {
+            if (c.InvokeRequired)
+                return c.Invoke(function, args);
+            else
+                return function.DynamicInvoke(args);
+        }
+
         public static object Invoke(this Control c, Func<object> function)
         {
             if (c.InvokeRequired)
@@ -93,7 +101,7 @@ namespace Cliver
             if (c.InvokeRequired)
                 c.BeginInvoke(code);
             else
-                code();
+                code.BeginInvoke();
         }
 
         //public static void BeginInvoke2(this Control c, MethodInvoker code)

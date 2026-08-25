@@ -15,7 +15,7 @@ namespace Cliver.Win
         public static string GetLocalPathForUncPath(string uncOrLocalPath)
         {
             string uncPath = uncOrLocalPath.Replace(@"\\", "");
-            string[] uncParts = uncPath.Split(new char[] { '\\' }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] uncParts = uncPath.Split(['\\'], System.StringSplitOptions.RemoveEmptyEntries);
             if (uncParts.Length < 2)
                 throw new Exception("Could not resolve UNC path: " + uncPath);
             // Get a connection to the server as found in the UNC path

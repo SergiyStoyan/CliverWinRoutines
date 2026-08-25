@@ -13,9 +13,9 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Cliver
+namespace Cliver//.Win (!)for backword compatibility and not adding using Cliver.Win;
 {
-    public static partial class Message
+    public partial class Message
     {
         public static async Task InformAsync(string message, Form owner = null)
         {
@@ -77,20 +77,20 @@ namespace Cliver
             await Task.Run(() => { Message.Error(message, owner); });
         }
 
-        public static async Task<bool> YesNoAsync(string question, Form owner = null, Message.Icons icon = Message.Icons.Question, bool defaultIsYes = true)
+        public static async Task<bool> YesNoAsync(string question, Form owner = null, Icons icon = Icons.Question, bool defaultIsYes = true)
         {
             return await Task.Run(() => { return Message.YesNo(question, owner, icon, defaultIsYes); });
         }
 
-        public static async Task<int> ShowDialogAsync(string title, Message.Icons icon, string message, string[] buttons, int defaultButton, Form owner = null, bool? buttonAutosize = null, bool? noDuplicate = null, bool? topmost = null)
+        public static async Task<int> ShowDialogAsync(string title, Icons icon, string message, string[] buttons, int defaultButton, Form owner = null, bool? buttonAutosize = null/*, bool? noDuplicate = null*/, bool? topMost = null)
         {
-            return await Task.Run(() => { return Message.ShowDialog(title, icon, message, buttons, defaultButton, owner, buttonAutosize, noDuplicate, topmost); });
+            return await Task.Run(() => { return Message.ShowDialog(title, icon, message, buttons, defaultButton, owner, buttonAutosize/*, noDuplicate*/, topMost); });
 
         }
 
-        public static async Task<int> ShowDialogAsync(string title, Icon icon, string message, string[] buttons, int defaultButton, Form owner, bool? buttonAutosize = null, bool? noDuplicate = null, bool? topmost = null)
+        public static async Task<int> ShowDialogAsync(string title, Icon icon, string message, string[] buttons, int defaultButton, Form owner, bool? buttonAutosize = null/*, bool? noDuplicate = null*/, bool? topMost = null)
         {
-            return await Task.Run(() => { return Message.ShowDialog(title, icon, message, buttons, defaultButton, owner, buttonAutosize, noDuplicate, topmost); });
+            return await Task.Run(() => { return Message.ShowDialog(title, icon, message, buttons, defaultButton, owner, buttonAutosize/*, noDuplicate*/, topMost); });
         }
     }
 }

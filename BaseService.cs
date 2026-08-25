@@ -7,7 +7,7 @@
 using System;
 using System.Threading;
 
-namespace Cliver
+namespace Cliver.Win
 {
     abstract public class BaseService
     {

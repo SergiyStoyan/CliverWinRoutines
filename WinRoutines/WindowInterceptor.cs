@@ -22,7 +22,7 @@ namespace Cliver.Win
         static IntPtr hook_id = IntPtr.Zero;
         static WinApi.User32.HookProc cbf = new WinApi.User32.HookProc(wnd_hook_proc);
 
-        static IntPtr[] owner_windows = new IntPtr[0];
+        static IntPtr[] owner_windows = [];
         static Dictionary<IntPtr, Cliver.Log.Writer> owner_window_logs = new Dictionary<IntPtr, Cliver.Log.Writer>();
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Cliver.Win
             {
                 try
                 {
-                    owner_windows = new IntPtr[0];
+                    owner_windows = [];
                     owner_window_logs.Clear();
 
                     if (hook_id != IntPtr.Zero)

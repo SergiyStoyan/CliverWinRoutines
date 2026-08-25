@@ -1,182 +1,82 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <ProjectType>Local</ProjectType>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Cliver.Win</RootNamespace>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>
-    </StartupObject>
-    <ManifestCertificateThumbprint>1C424264B0FBE4581C3F5E9EA46D1D432B064701</ManifestCertificateThumbprint>
-    <ManifestKeyFile>CliverBot_TemporaryKey.pfx</ManifestKeyFile>
-    <GenerateManifests>true</GenerateManifests>
-    <TargetZone>LocalIntranet</TargetZone>
-    <SignManifests>false</SignManifests>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>c:/CliverBot/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <BaseAddress>285212672</BaseAddress>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <BaseAddress>285212672</BaseAddress>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>bin\Debug\CliverWinRoutines.xml</DocumentationFile>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>bin\Release\CliverWinRoutines.xml</DocumentationFile>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Update="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Update="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Update="System.Drawing">
-      <Name>System.Drawing</Name>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Update="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
-      <Visible>False</Visible>
-      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CliverRoutines">
-      <Version>6.43.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.DirectoryServices" Version="9.0.4" />
-    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.4" />
-    <PackageReference Include="System.Management" Version="9.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Test\Form1.cs" />
-    <Compile Remove="Test\Form1.Designer.cs" />
-    <Compile Remove="Test\obj\Debug\net6.0-windows\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
-    <Compile Remove="Test\obj\Debug\net6.0-windows\Test.AssemblyInfo.cs" />
-    <Compile Remove="Test\obj\Debug\net6.0-windows\Test.GlobalUsings.g.cs" />
-    <Compile Remove="Test\Program.cs" />
-    <EmbeddedResource Remove="Test\Form1.resx" />
-  </ItemGroup>
-  <PropertyGroup>
-    <PackageReleaseNotes>2.7 =&gt; 2.8
-- Audio added;
+	
+	<PropertyGroup>
+		<TargetFrameworks>net48;net9.0-windows7.0</TargetFrameworks>
+		<UseWindowsForms>true</UseWindowsForms>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
-2.7.1 =&gt; 2.7.2
-- upgraded to .NET9;</PackageReleaseNotes>
-    <Title>Windows-specific routines.</Title>
-    <Version>2.8.0</Version>
-    <Description>Windows-specific routines that are helpful in desktop Windows applications.</Description>
-    <Authors>Sergiy Stoyan</Authors>
-    <Company>CliverSoft</Company>
-    <Copyright>Sergiy Stoyan</Copyright>
-    <PackageProjectUrl>https://github.com/sergiystoyan/CliverWinRoutines</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sergiystoyan/CliverWinRoutines.git</RepositoryUrl>
-    <PackageTags>windows, serialize, settings</PackageTags>
-  </PropertyGroup>
+		<!-- Compiler must support global usings (C# 10+) -->
+		<LangVersion>latest</LangVersion>
+
+		<OutputType>Library</OutputType>
+		<Version>3.0.0</Version>
+		<Authors>Sergiy Stoyan</Authors>
+		<Company>CliverSoft</Company>
+		<Copyright>Sergiy Stoyan</Copyright>
+		<PackageProjectUrl>https://github.com/sergiystoyan/CliverWinRoutines</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/sergiystoyan/CliverWinRoutines.git</RepositoryUrl>
+		<Description>Windows-specific utils usually needed in desktop apps.</Description>
+		<RootNamespace>Cliver.Win</RootNamespace>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Windows-specific utils.</Title>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<PackageReleaseNotes>2.8 =&gt; 3.0
+- MessageBox added;
+- Message enhanced;
+- a lot of old dependencies dropped;
+</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="LICENSE" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
+	<!-- net9-only modern features -->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-windows7.0'">
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<!-- net48-specific package to ensure DPAPI types are available if needed -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+		<PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CliverRoutines" Version="6.60.0" />
+		<PackageReference Include="System.Management" Version="10.0.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Test\**" />
+		<EmbeddedResource Remove="Test\**" />
+		<None Remove="Test\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+
 </Project>

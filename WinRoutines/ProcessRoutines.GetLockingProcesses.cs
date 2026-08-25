@@ -95,7 +95,7 @@ namespace Cliver.Win
 
             try
             {
-                string[] resources = new string[] { file };
+                string[] resources = [file];
                 if (0 != RmRegisterResources(handle, (uint)resources.Length, resources, 0, null, 0, null))
                     throw new Exception("Could not RmRegisterResources()");
 

@@ -24,7 +24,7 @@ namespace Cliver.Win
         public static IEnumerable<Process> GetProcesses(string exeFile)
         {
             string exeFileDir = Cliver.PathRoutines.GetFileDir(exeFile).ToLower();
-            return Process.GetProcessesByName(Cliver.PathRoutines.GetFileNameWithoutExtention(exeFile)).Where(p =>
+            return Process.GetProcessesByName(Cliver.PathRoutines.GetFileNameWithoutExtension(exeFile)).Where(p =>
             {
                 ProcessModule pm;
                 try
@@ -179,7 +179,7 @@ namespace Cliver.Win
                 process.WaitForExit(pollTimeSpanMss);
                 return !process.IsRunning();
             },
-                timeoutMss
+                timeoutMss, 0
                 );
         }
 

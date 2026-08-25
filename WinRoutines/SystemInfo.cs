@@ -108,7 +108,8 @@ namespace Cliver.Win
 
         static public ulong GetTotalPhysicalMemory()
         {
-            return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            //return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            throw new Exception("Need a reference.");
         }
 
         static public TimeSpan GetUpTime()

@@ -9,10 +9,10 @@ namespace Cliver.Win
 {
     public static class AssemblyRoutines
     {
-        public static System.Windows.Media.ImageSource GetAppIconImageSource()
-        {
-            return GetAppIcon().ToImageSource();
-        }
+        //public static System.Windows.Media.ImageSource GetAppIconImageSource()
+        //{
+        //    return GetAppIcon().ToImageSource();
+        //}
 
         public static System.Drawing.Icon GetAppIcon(Assembly assembly = null)
         {

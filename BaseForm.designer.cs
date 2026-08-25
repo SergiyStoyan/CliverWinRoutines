@@ -1,4 +1,5 @@
-﻿namespace Cliver
+﻿
+namespace Cliver//.Win (!)for backword compatibility and not adding using Cliver.Win;
 {
     partial class BaseForm
     {
