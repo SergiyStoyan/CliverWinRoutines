@@ -11,8 +11,8 @@
 
 		<OutputType>Library</OutputType>
 		
-		<Version>3.0.1
-.$([MSBuild]::Divide($([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000)), 5))</Version>
+		<Version>3.0.2
+.$([MSBuild]::Divide($([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000)), 600))</Version>
 		<!--Version>
 			3.0.10
 			.$([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000))
