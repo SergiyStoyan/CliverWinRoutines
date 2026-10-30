@@ -39,20 +39,20 @@ namespace Cliver//.Win (!)for backword compatibility and not adding using Cliver
         /// <summary>
         /// A handler that places the message box on the top of either the app form or the desktop.
         /// </summary>
-        /// <param name="c"></param>
-        static public void SetOnTop(Message.Config c)
+        /// <param name="config"></param>
+        static public void SetOnTop(Message.Config config)
         {
-            c.Owner = c.Owner?.FindForm();
-            if (c.Owner?.Visible == true)
+            config.Owner = config.Owner?.FindForm();
+            if (config.Owner?.Visible == true)
                 return;
             var fs = GetAppOpenForms();
             for (int i = fs.Count - 1; i >= 0; i--)
             {
-                c.Owner = fs[i];
-                if (c.Owner?.Visible == true)
+                config.Owner = fs[i];
+                if (config.Owner?.Visible == true)
                     return;
             }
-            c.TopMost = true;
+            config.TopMost = true;
         }
 
         public static FormCollection GetAppOpenForms()

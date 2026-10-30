@@ -11,7 +11,7 @@
 
 		<OutputType>Library</OutputType>
 		
-		<Version>3.0.2
+		<Version>3.0.3
 .$([MSBuild]::Divide($([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000)), 600))</Version>
 		<!--Version>
 			3.0.10
@@ -67,12 +67,12 @@
 
 	<!-- net48-specific package to ensure DPAPI types are available if needed -->
 	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-		<PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
+		<PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.14" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CliverRoutines" Version="6.60.0" />
-		<PackageReference Include="System.Management" Version="10.0.11" />
+		<PackageReference Include="CliverRoutines" Version="6.61.0.9207" />
+		<PackageReference Include="System.Management" Version="10.0.14" />
 	</ItemGroup>
 
 	<ItemGroup>
