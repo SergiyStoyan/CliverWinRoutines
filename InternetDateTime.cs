@@ -1,8 +1,6 @@
 /********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 
@@ -69,6 +67,7 @@ namespace Cliver.Win
         /// <param name="year">year when the test period expires; if it is less than 1 then the check is not performed</param>
         /// <param name="month">month when the test period expires</param>
         /// <param name="day">day when the test period expires</param>
+        /// <param name="silently"></param>
         /// <param name="for_release_only"></param>
         static public void CHECK_TEST_PERIOD_VALIDITY(int year, int month, int day, bool silently = false, bool for_release_only = false)
         {
@@ -175,9 +174,9 @@ namespace Cliver.Win
             catch (Exception e)
             {
                 if (silently)
-                    Cliver.Log.Main.Error("Validation failed.\n\n" + e.Message);
+                    Cliver.Log.Main.Error("Validation failed.\n\n" + Log.GetExceptionMessage2(e));
                 else
-                    LogMessage.Exit("Test period validation failed.\n\n" + e.Message);
+                    LogMessage.Exit("Test period validation failed.\n\n" + Log.GetExceptionMessage2(e));
                 //Environment.Exit(0);
             }
 

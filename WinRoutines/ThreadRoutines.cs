@@ -1,8 +1,6 @@
 /********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 using System;
@@ -46,7 +44,7 @@ namespace Cliver.Win
                         try
                         {
                             if (onError == null)
-                                throw e;
+                                throw;
                             onError.Invoke(e);
                         }
                         catch (ThreadAbortException)

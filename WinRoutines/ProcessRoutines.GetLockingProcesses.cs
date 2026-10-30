@@ -1,8 +1,6 @@
 ﻿/********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 
@@ -97,7 +95,7 @@ namespace Cliver.Win
 
             try
             {
-                string[] resources = new string[] { file };
+                string[] resources = [file];
                 if (0 != RmRegisterResources(handle, (uint)resources.Length, resources, 0, null, 0, null))
                     throw new Exception("Could not RmRegisterResources()");
 

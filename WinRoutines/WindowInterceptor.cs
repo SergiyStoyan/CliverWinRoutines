@@ -1,8 +1,6 @@
 /********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 using System;
@@ -24,7 +22,7 @@ namespace Cliver.Win
         static IntPtr hook_id = IntPtr.Zero;
         static WinApi.User32.HookProc cbf = new WinApi.User32.HookProc(wnd_hook_proc);
 
-        static IntPtr[] owner_windows = new IntPtr[0];
+        static IntPtr[] owner_windows = [];
         static Dictionary<IntPtr, Cliver.Log.Writer> owner_window_logs = new Dictionary<IntPtr, Cliver.Log.Writer>();
 
         /// <summary>
@@ -120,7 +118,7 @@ namespace Cliver.Win
             {
                 try
                 {
-                    owner_windows = new IntPtr[0];
+                    owner_windows = [];
                     owner_window_logs.Clear();
 
                     if (hook_id != IntPtr.Zero)

@@ -1,8 +1,6 @@
 /********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 using System;
@@ -15,13 +13,13 @@ namespace Cliver.Win
 {
     public static class ImageRoutines
     {
-        public static System.Windows.Media.ImageSource ToImageSource(this System.Drawing.Icon icon)
-        {
-            return System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
-                icon.Handle,
-                System.Windows.Int32Rect.Empty,
-                System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
-        }
+        //public static System.Windows.Media.ImageSource ToImageSource(this System.Drawing.Icon icon)
+        //{
+        //    return System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
+        //        icon.Handle,
+        //        System.Windows.Int32Rect.Empty,
+        //        System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+        //}
 
         public static Bitmap GetCopy(Image image, Rectangle r)
         {
@@ -188,15 +186,6 @@ namespace Cliver.Win
             return b2;
         }
 
-        //public static System.Windows.Media.ImageSource ToImageSource(this System.Drawing.Icon icon)
-        //{
-        //    return System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
-        //        icon.Handle,
-        //        System.Windows.Int32Rect.Empty,
-        //        System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
-        //}
-
-        //var g = Convert.ToBase64String(ImageProcessor.GetBitmapHash(new Bitmap(@"d:\temp\b2.png")));
         public static byte[] GetBitmapMd5Hash(Bitmap bitmap, int hashResolution = 16)
         {
             byte[] rawImageData = new byte[hashResolution * hashResolution];

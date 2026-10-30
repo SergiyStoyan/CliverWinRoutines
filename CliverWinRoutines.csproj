@@ -1,95 +1,100 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFrameworks>net48;net9.0-windows7.0</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<!-- Compiler must support global usings (C# 10+) -->
+		<LangVersion>latest</LangVersion>
+
+		<OutputType>Library</OutputType>
+		
+		<Version>3.0.3
+.$([MSBuild]::Divide($([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000)), 600))</Version>
+		<!--Version>
+			3.0.10
+			.$([MSBuild]::Subtract($([System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()), 1787830000))
+		</Version-->
+	
+		
+		<Authors>Sergiy Stoyan</Authors>
+		<Company>CliverSoft</Company>
+		<Copyright>Sergiy Stoyan</Copyright>
+		<PackageProjectUrl>https://github.com/sergiystoyan/CliverWinRoutines</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/sergiystoyan/CliverWinRoutines.git</RepositoryUrl>
+		<Description>Windows-specific utils usually needed in desktop apps.</Description>
 		<RootNamespace>Cliver.Win</RootNamespace>
-		<AssemblyName>CliverWinRoutines</AssemblyName>
-		<Deterministic>false</Deterministic>
-		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Windows-specific utils.</Title>
+		<PackageTags>MessageBox, settings</PackageTags>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove=".gitattributes" />
-	  <None Remove=".gitignore" />
-	  <None Remove="LICENSE" />
-	  <None Remove="packages.config" />
+		<None Include="LICENSE" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="System.Management" Version="6.0.0-preview.7.21377.19" />
-	</ItemGroup>
+	<PropertyGroup>
+		<PackageReleaseNotes>
+			2.8 =&gt; 3.0
+			- MessageBox added;
+			- Message enhanced;
+			- a lot of old dependencies dropped;
+		</PackageReleaseNotes>
+	</PropertyGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\CliverRoutines\CliverRoutines.csproj" />
-	</ItemGroup>
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
 	
+	<PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 	<ItemGroup>
-		<Compile Update="BaseForm\BaseForm.cs">
-		</Compile>
-		<Compile Update="BaseForm\BaseForm.designer.cs">
-			<DependentUpon>BaseForm.cs</DependentUpon>
-		</Compile>
-		<Compile Update="Config\AppSettings.cs" />
-		<Compile Update="Config\Encrypted.cs" />
-		<Compile Update="Microsoft\Win32\NativeMethods.cs" />
-		<Compile Update="Microsoft\Win32\SafeFileMappingHandle.cs" />
-		<Compile Update="WinApi\Handles.cs" />
-		<Compile Update="Microsoft\Win32\SafeLocalMemHandle.cs" />
-		<Compile Update="Microsoft\Win32\SafeNativeMethods.cs" />
-		<Compile Update="Microsoft\Win32\SafeThreadHandle.cs" />
-		<Compile Update="Microsoft\Win32\UnsafeNativeMethods.cs" />
-		<Compile Update="WinApi\WinApi.cs" />
-		<Compile Update="WinRoutines\ConsoleRoutines.cs" />
-		<Compile Update="WinRoutines\Crypto.cs" />
-		<Compile Update="WinRoutines\ProcessRoutines2.CreateProcess.cs" />
-		<Compile Update="WinRoutines\ProgramRoutines.cs" />
-		<Compile Update="WinRoutines\ImageRoutines.cs" />
-		<Compile Update="BaseForm\Message.cs" />
-		<Compile Update="BaseForm\MessageForm.cs">
-		</Compile>
-		<Compile Update="BaseForm\MessageForm.Designer.cs">
-			<DependentUpon>MessageForm.cs</DependentUpon>
-		</Compile>
-		<Compile Update="BaseService.cs" />
-		<Compile Update="BaseForm\LogMessage.cs" />
-		<Compile Update="Db\DbCommand.cs" />
-		<Compile Update="Db\DbConnection.cs" />
-		<Compile Update="InternetDateTime.cs" />
-		<Compile Update="WinRoutines\AssemblyRoutines.cs" />
-		<Compile Update="WinRoutines\SessionRoutines.cs" />
-		<Compile Update="WinRoutines\Wmi.cs" />
-		<Compile Update="WinRoutines\ThreadRoutines.cs" />
-		<Compile Update="WinRoutines\ProcessRoutines.GetLockingProcesses.cs" />
-		<Compile Update="WinRoutines\Firewall.cs" />
-		<Compile Update="WinRoutines\ProcessRoutines.AntiZombieGuard.cs" />
-		<Compile Update="WinRoutines\ProcessRoutines.CreateProcess.cs" />
-		<Compile Update="WinRoutines\UserRoutines.cs" />
-		<Compile Update="WinRoutines\SystemRoutines.cs" />
-		<Compile Update="WinRoutines\SystemInfo.cs" />
-		<Compile Update="WinRoutines\ProcessRoutines.cs" />
-		<Compile Update="WinRoutines\WindowInterceptor.cs" />
-		<Compile Update="WinRoutines\ExcelRoutines.cs" />
-		<Compile Update="Properties\AssemblyInfo.cs" />
-		<Compile Update="WinApi\Shell32.cs" />
-		<Compile Update="WinApi\Secur32.cs" />
-		<Compile Update="WinApi\Wininet.cs" />
-		<Compile Update="WinApi\Advapi32.cs" />
-		<Compile Update="WinApi\Userenv.cs" />
-		<Compile Update="WinApi\Wts.cs" />
-		<Compile Update="WinApi\User32.cs" />
-		<Compile Update="WinApi\Messages.cs" />
-		<Compile Update="WinRoutines\ErrorRoutines.cs" />
-		<Compile Update="WinApi\Kernel32.cs" />
-		<Compile Update="WinApi\Win64.cs" />
-		<EmbeddedResource Update="BaseForm\BaseForm.resx">
-			<DependentUpon>BaseForm.cs</DependentUpon>
-			<SubType>Designer</SubType>
-		</EmbeddedResource>
-		<EmbeddedResource Update="BaseForm\MessageForm.resx">
-			<DependentUpon>MessageForm.cs</DependentUpon>
-		</EmbeddedResource>
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
+
+	<!-- net9-only modern features -->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-windows7.0'">
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<!-- net48-specific package to ensure DPAPI types are available if needed -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+		<PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.14" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CliverRoutines" Version="6.61.0.9207" />
+		<PackageReference Include="System.Management" Version="10.0.14" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Test\**" />
+		<EmbeddedResource Remove="Test\**" />
+		<None Remove="Test\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
 
 </Project>

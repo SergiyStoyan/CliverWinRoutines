@@ -1,8 +1,6 @@
 ﻿/********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 using System;
@@ -48,7 +46,7 @@ namespace Cliver.Win
                 if (s.Primary)
                     f = file;
                 else
-                    f = PathRoutines.InsertSuffixBeforeFileExtension(file, "_" + PathRoutines.GetLegalizedFileName(s.DeviceName));
+                    f = Cliver.PathRoutines.InsertSuffixBeforeFileExtension(file, "_" + Cliver.PathRoutines.GetLegalizedFileName(s.DeviceName));
                 System.Drawing.Rectangle bounds = s.Bounds;
                 using (System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(bounds.Width, bounds.Height))
                 {
@@ -110,7 +108,8 @@ namespace Cliver.Win
 
         static public ulong GetTotalPhysicalMemory()
         {
-            return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            //return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
+            throw new Exception("Need a reference.");
         }
 
         static public TimeSpan GetUpTime()

@@ -1,8 +1,6 @@
 ﻿/********************************************************************************************
-        Author: Sergey Stoyan
-        sergey.stoyan@gmail.com
-        sergey.stoyan@hotmail.com
-        stoyan@cliversoft.com
+        Author: Sergiy Stoyan
+        s.y.stoyan@gmail.com, sergiy.stoyan@outlook.com, stoyan@cliversoft.com
         http://www.cliversoft.com
 ********************************************************************************************/
 
@@ -25,8 +23,8 @@ namespace Cliver.Win
     {
         public static IEnumerable<Process> GetProcesses(string exeFile)
         {
-            string exeFileDir = PathRoutines.GetFileDir(exeFile).ToLower();
-            return Process.GetProcessesByName(PathRoutines.GetFileNameWithoutExtention(exeFile)).Where(p =>
+            string exeFileDir = Cliver.PathRoutines.GetFileDir(exeFile).ToLower();
+            return Process.GetProcessesByName(Cliver.PathRoutines.GetFileNameWithoutExtension(exeFile)).Where(p =>
             {
                 ProcessModule pm;
                 try
@@ -45,13 +43,14 @@ namespace Cliver.Win
         public static void RunMeInSingleProcessOnly(Action<string> exitingMessage)
         {
             string appName = ProgramRoutines.GetAppName();
+            bool createdNew;
             //MutexSecurity mutexSecurity = new MutexSecurity();
             //mutexSecurity.AddAccessRule(new MutexAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), MutexRights.Synchronize | MutexRights.Modify, AccessControlType.Allow));
             for (int i = 0; i < 2; i++)
             {
                 try
                 {
-                    GLOBAL_SINGLE_PROCESS_MUTEX = new Mutex(false, @"Global\CLIVERSOFT_" + appName + @"_SINGLE_PROCESS", out _/*, mutexSecurity*/);
+                    GLOBAL_SINGLE_PROCESS_MUTEX = new Mutex(false, @"Global\CLIVERSOFT_" + appName + @"_SINGLE_PROCESS", out createdNew/*, mutexSecurity*/);
                     break;
                 }
                 catch (Exception e)
@@ -180,7 +179,7 @@ namespace Cliver.Win
                 process.WaitForExit(pollTimeSpanMss);
                 return !process.IsRunning();
             },
-                timeoutMss
+                timeoutMss, 0
                 );
         }
 
@@ -260,7 +259,7 @@ namespace Cliver.Win
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
             finally
             {
